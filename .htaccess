@@ -1,0 +1,16 @@
+Options -Indexes
+
+
+#RewriteEngine Off
+
+#RewriteBase /
+
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteRule ^(.*)$ index.php?p=$1 [QSA]
+
+<Files ~ "^sftp-config.json|.gitignore|.sass-cache|.htaccess|.git|node_modules|server.js">
+  Order allow,deny
+  Deny from all
+</Files>
+
+
